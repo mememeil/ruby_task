@@ -17,7 +17,7 @@ def q2
   array2 = %w(bird bat tiger)
 
   # 以下に回答を記載
-  array = array1.concat(array2)
+  array = array1 + array2
   p array
 
 end
