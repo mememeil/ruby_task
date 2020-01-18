@@ -52,9 +52,18 @@ def q5
 end
 
 def q6
+  # Q6. 次の配列から，期待された結果の配列 `numbers2` を作成し，出力して下さい。
+  # 期待する配列
+  # [10, 20, 30, 40, 50]
   numbers1 = [1, 2, 3, 4, 5]
 
   # 以下に回答を記載
+  numbers2 =
+  numbers1.map do |number|
+    number * 10
+  end
+
+  p numbers2
 
 end
 
