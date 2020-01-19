@@ -277,10 +277,16 @@ def q18
   puts user2.introduce
 end
 
+# Q19. 次のコードはエラーが出ます。期待する出力結果となるようにコードを修正して下さい。
+
+# 期待する出力結果
+# ゼロ秒思考
+
 class Item
   # 以下を修正して下さい
+  attr_reader :name
 
-  def initialize(name)
+  def initialize(name:)
     @name = name
   end
 end
