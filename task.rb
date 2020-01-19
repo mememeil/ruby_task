@@ -58,10 +58,7 @@ def q6
   numbers1 = [1, 2, 3, 4, 5]
 
   # 以下に回答を記載
-  numbers2 =
-  numbers1.map do |number|
-    number * 10
-  end
+  numbers2 = numbers1.map {|number| number * 10}
 
   p numbers2
 
@@ -105,10 +102,8 @@ def q9
   names = ["田中", "佐藤", "佐々木", "高橋"]
 
   # 以下に回答を記載
-  num = 1
-  names.each do |name|
-    puts "会員No.#{num} #{name}さん"
-    num += 1
+  names.each.with_index(1) do |name, i|
+    puts "会員No.#{i} #{name}さん"
   end
 end
 
@@ -127,9 +122,27 @@ def q10
 end
 
 def q11
+  # Q11. 次の配列を用いて，期待する出力結果になるようにコードを書いて下さい。
+  # 期待する出力結果
+  # ユーザーの趣味一覧
+  # No1 サッカー
+  # No2 バスケ
+  # No3 野球
+  # No4 フットサル
+  # No5 水泳
+  # No6 ハンドボール
+  # No7 卓球
+  # No8 ボルダリング
   sports = ["サッカー", "バスケ", "野球", ["フットサル", "野球"], "水泳", "ハンドボール", ["卓球", "サッカー", "ボルダリング"]]
 
   # 以下に回答を記載
+  sports.flatten!.uniq!
+  
+  puts "ユーザーの趣味一覧"
+  
+  sports.each.with_index(1) do |sport, i|
+    puts "No#{i} #{sport}"
+  end
 
 end
 
