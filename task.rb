@@ -297,14 +297,46 @@ def q19
   puts book.name
 end
 
+# Q20. 次の仕様を満たした上で，期待する出力結果になるようにコードを追加して下さい。
+# 年齢区分は，幼児(0〜5歳)，子供(6〜12歳)，成人(13〜64歳)，シニア(65〜120歳)の4パターンとします。（この範囲外の年齢については対処しなくてOKです）
+# 期待する出力結果
+
+# たまさんの入場料金は 0 円です。
+# ゆたぼんさんの入場料金は 400 円です。
+# あじーさんの入場料金は 800 円です。
+# ぎんさんの入場料金は 500 円です。
+
 class UserQ20
   # 以下に回答を記載
+  attr_reader :name, :age
 
+  def initialize(**params)
+    @name = params[:name]
+    @age = params[:age]
+  end
 end
 
 class Zoo
   # 以下に回答を記載
+  attr_reader :name, :entry_fee
 
+  def initialize(**params)
+    @name = params[:name]
+    @entry_fee = params[:entry_fee]
+  end
+
+  def info_entry_fee(user)
+    case user.age
+    when 0..5
+      puts "#{user.name}さんの入場料金は #{@entry_fee[:infant]} 円です。"
+    when 6..12
+      puts "#{user.name}さんの入場料金は #{@entry_fee[:children]} 円です。"
+    when 13..64
+      puts "#{user.name}さんの入場料金は #{@entry_fee[:adult]} 円です。"
+    when 65..120
+      puts "#{user.name}さんの入場料金は #{@entry_fee[:senior]} 円です。"
+    end
+  end
 end
 
 
