@@ -244,9 +244,28 @@ def q17
   user2.info
 end
 
+# Q18. 年齢を用いた場合分けを利用して，期待する出力結果になるようなUserクラスを作成して下さい。
+# 期待する出力結果
+
+# こんにちは，あじーと申します。宜しくお願いいたします。
+# はいさいまいど〜，ゆたぼんです！！！
+
 class UserQ18
   # 以下に回答を記載
+  attr_reader :name, :age
 
+  def initialize(**params)
+    @name = params[:name]
+    @age = params[:age]
+  end
+
+  def introduce
+    if @age >= 20
+      puts "こんにちは，#{@name}と申します。宜しくお願いいたします。"
+    else
+      puts "はいさいまいど〜，#{@name}です！！！"
+    end
+  end
 end
 
 def q18
