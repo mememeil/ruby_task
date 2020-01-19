@@ -175,11 +175,20 @@ def q14
 end
 
 def q15
+  # Q15. `age` というキーが含まれている場合は OK ，含まれていない場合は NG が出力されるコードを書いて下さい。
   data1 = { name: "saitou", hobby: "soccer", age: 33, role: "admin" }
   data2 = { name: "yamada", hobby: "baseball", role: "normal" }
 
   # 以下に回答を記載
+  array = [data1, data2]
 
+  array.each do |data|
+    if data.include?(:age)
+      puts "OK"
+    else
+      puts "NG"
+    end
+  end
 end
 
 def q16
