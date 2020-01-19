@@ -183,12 +183,8 @@ def q15
   array = [data1, data2]
 
   array.each do |data|
-    if data.include?(:age)
-      puts "OK"
-    else
-      puts "NG"
-    end
-  end
+    puts data.include?(:age) ? "OK" : "NG"
+  end   
 end
 
 def q16
