@@ -147,10 +147,11 @@ def q11
 end
 
 def q12
+  # Q12. 次のハッシュから `name` の値を出力して下さい。
   data = { user: { name: "satou", age: 33 } }
 
   # 以下に回答を記載
-
+  puts data[:user][:name]
 end
 
 def q13
