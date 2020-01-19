@@ -202,9 +202,36 @@ def q16
   end
 end
 
+# Q17. 次の Userクラス 内にコードを追加し，期待する出力結果になるようにして下さい。
+# 期待する出力結果
+
+# 名前：神里
+# 年齢：32
+# 性別：男
+# 管理者権限：有り
+# -------------
+# 名前：あじー
+# 年齢：32
+# 性別：男
+# 管理者権限：無し
+
 class UserQ17
   # 以下に回答を記載
+  attr_reader :name, :age, :gender, :admin
 
+  def initialize(**params)
+    @name = params[:name]
+    @age = params[:age]
+    @gender = params[:gender]
+    @admin = params[:admin]
+  end
+
+  def info
+    puts "名前：#{@name}"
+    puts "年齢：#{@age}"
+    puts "性別：#{@gender}"
+    puts "管理者権限：#{@admin}"
+  end
 end
 
 def q17
